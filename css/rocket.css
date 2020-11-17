@@ -1,3 +1,12 @@
+
+body {
+	font-family: 'Goldman', sans-serif;
+	background-color: aquamarine;
+}
+/*h1 {
+	font-family: 'Goldman', serif;
+}*/
+
 .left {
 	position: fixed;
 	background-color: aquamarine;
@@ -10,7 +19,7 @@
 
 .right {
 	position: fixed;
-	background-color: green;
+	background-color: azure;
 	width: 50%;
 	height: 100%;
 	top: 0;
@@ -19,22 +28,76 @@
 
 .ground {
 	position: absolute;
-	bottom: 0;
+	bottom: -43px;
 	left: 0;
-	height: 20px;
+	height: 340px;
 	width: 100%;
-	background-color: green;
+	background: url('../img/floor.png') no-repeat center center;
+}
+
+.yiiiha {
+	position: absolute;
+	background: url('../img/yiiiha.png') no-repeat 0 0;
+	bottom: 120px;
+	left: 50%;
+	margin-left:20px;
+	height: 235px;
+	width: 361px;
+	display: none;
+}
+
+.yiiiha.show {
+	display: block;
+}
+
+.letsego {
+	position: absolute;
+	background: url('../img/letsego.png') no-repeat 0 0;
+	bottom: 83px;
+    left: 50%;
+    margin-left: -370px;
+	height: 235px;
+	width: 361px;
+	display: none;
+}
+
+.letsego.show {
+	display: block;
 }
 
 .rocket {
 	position: absolute;
 	left: 50%;
-	bottom: 20px;
-	width: 20px;
-	height: 100px;
-	background-color: grey;
+	bottom: -24px;
+	width: 150px;
+	height: 300px;
+	margin-left:-75px;
+	background: url('../img/rocket.png') no-repeat 0 0;
 	transition: bottom 10000ms;
 }
+
+
+
+/* rocket bg image*/
+body.body-state2 .rocket
+ {
+	background: url('../img/rocket_fire.png');
+}
+
+
+body.body-state3 .rocket,
+body.body-state4 .rocket
+ {
+	background: url('../img/rocket_fire2.png');
+}
+
+
+body.body-state5 .rocket
+ {
+	background: url('../img/boom.png');
+}
+
+/* rocket pos change */
 
 body.body-state1 .rocket {
 	transition: none;
@@ -62,9 +125,33 @@ body.body-state5 .state5 {display: block;}
 
 
 a {
+	text-decoration: none;
+}
 
+a:hover {
+	text-decoration: underline;
+}
+
+a:active, a:visited {
+	color: black;
 }
 
 a.button {
+	display: inline-block;
+	background-color: white;
+	color: black;
+	padding: 20px 40px;
+	text-transform: uppercase;
+	text-decoration: none;
+	border-radius: 10px;
+	transition: color 300ms;
+}
 
+a.button:hover {
+	color: aquamarine;
+}
+
+.interface {
+	text-align: center;
+	padding: 20px;
 }

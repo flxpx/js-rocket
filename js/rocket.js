@@ -8,10 +8,31 @@ var changeState = function (state) {
 	countdownNumber = 10;
 	document.getElementById('countdown').innerHTML = 10;
 
+
+	if (state == 1) {
+		document.getElementById('letsego').className = 'letsego';
+		document.getElementById('yiiiha').className = 'yiiiha';
+	} //resets letsego and yiiiha if aborted 
+
+	//countdown
 	if (state == 2) {
 		timer = setInterval(function() {
 			countdownNumber = countdownNumber -1;
 			document.getElementById('countdown').innerHTML = countdownNumber;
+			
+			if (countdownNumber > 3 && countdownNumber <= 6) {
+				//letse go
+				document.getElementById('letsego').className = 'letsego show'
+			} else { document.getElementById('letsego').className = 'letsego'};
+
+			if (countdownNumber <= 3 && countdownNumber > 1) {
+				//yiiiha
+				document.getElementById('yiiiha').className = 'yiiiha show'
+			} else {document.getElementById('yiiiha').className = 'yiiiha'};
+
+
+
+
 			if (countdownNumber <= 0) {
 				changeState(3);
 			}
